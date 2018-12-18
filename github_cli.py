@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import click
 
+from objects.repo import repo_cli
 from objects.team import team_cli
 
 
@@ -11,6 +12,7 @@ def cli(ctx, token):
     ctx.obj = {"token": token}
 
 
+cli.add_command(repo_cli)
 cli.add_command(team_cli)
 
 if __name__ == '__main__':
